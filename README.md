@@ -24,7 +24,7 @@
          sudo apt install mariadb-server -y
        
   #### 2. Zabbix 공식 저장소 등록 및 설치
-         ```bash
+         
             # Zabbix 7.0 리포지토리 다운로드 및 설치
             wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb
             sudo dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb
@@ -34,9 +34,9 @@
     
             # Zabbix 서버, 프론트엔드, 에이전트 패키지 설치
             apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
-         ```
+       
   #### 3. 초기 데이터베이스 설정
-         ```bash
+         
            mysql -uroot -p password
 
            #Zabbix 데이터베이스 생성
@@ -49,26 +49,26 @@
            #함수 생성 권한 신뢰 설정 활성화 (데이터 임포트 시 필요)
            SET GLOBAL log_bin_trust_function_creators = 1;
            QUIT; 
-         ```
+        
   
   #### 4. 초기 스키마와 데이터를 임포트합니다.
-          ```bash
+         
             # 초기 데이터 임포트 (위에서 설정한 'password' 입력)
             zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
 
             # 임포트 완료 후 신뢰 설정 다시 끄기 (보안 권장사항)
             sudo mysql -uroot -p -e "SET GLOBAL log_bin_trust_function_creators = 0;"
-          ```    
+           
   
   #### 5. /etc/zabbix/zabbix_server.conf 파일을 편집한다.
-          ```bash
+         
              DBPassword=password
-          ```
+         
   #### 6. Zabbix 서버 및 에이전트 프로세스를 시작한다.
-          ```bash
+         
              systemctl restart zabbix-server zabbix-agent apache2
              systemctl enable zabbix-server zabbix-agent apache2
-          ```
+        
 
 
 

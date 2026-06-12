@@ -30,11 +30,10 @@
 
             # 저장소 반영을 위한 업데이트
             sudo apt update
+    
+            # Zabbix 서버, 프론트엔드, 에이전트 패키지 설치
+            apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
      ```
-           # Zabbix 서버, 프론트엔드, 에이전트 패키지 설치
-         ```bash
-               apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
-         ```
   3. 초기 데이터베이스 설정
        ```bash
            mysql -uroot -p password

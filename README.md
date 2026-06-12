@@ -68,10 +68,48 @@
          
             systemctl restart zabbix-server zabbix-agent apache2
             systemctl enable zabbix-server zabbix-agent apache2
-        
+
+## zabbix agent 서버 설치 및 구성
+
+  #### 1. 루트 사용자 권한 획득
+
+        sudo -s
+
+  #### 2. Zabbix 저장소 설치
+
+        wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu24.04_all.deb
+        dpkg -i zabbix-release_latest_7.0+ubuntu24.04_all.deb
+        apt update
+    
+  #### 3. Zabbix 에이전트 설치
+
+        apt install zabbix-agent
+
+  #### 4. /etc/zabbix/zabbix_agentd.conf 
+
+        Server= zabbix 서버 IP
+        ServerActive= zabbix 서버 IP
+        Hostname= agent 서버 이름
+  
+  #### 5. Zabbix 에이전트 프로세스 시작
+
+        systemctl restart zabbix-agent
+        systemctl enable zabbix-agent
 
 
+## 트러블 슈팅
+ 
+    #### 1. 한글설정
 
+      # zabbix 다 설치하고 웹에서 접속하고 설정하려면 한글이 안된다. 
+      # 이유는 서버 locale 기준으로 가져오기 때문에 한글을 설치해야한다.
+
+         sudo apt-get install -y language-pack-ko
+         sudo locale-gen ko_KR.UTF-8
+         locale -a 
+    
+    #### 2.          
+          
 
 
        

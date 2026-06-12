@@ -99,6 +99,37 @@
         systemctl enable zabbix-agent
 
 
+## 🛠️ zabbix 페이지 꾸미기 
+
+  #### zabbix-agent 서버 연동하기
+      # 데이터 수집 -> 호스트 -> 호스트 생성
+      # 호스트 명 : zabbix-agent server.conf에 있는 호스트명
+      # 템플릿 : Linux by Zabbix agent
+      # 호스트 그룹 : Linux servers
+      # Interfaces : 에이전트 -> 서버 IP 
+      # 갱신 -> 상태에 초록색
+
+  #### zabbix 아이템 및 트리거 커스텀 (기본 템플릿을 복사하여 사용)
+      # CPU 90, 95, 100 % 를 심각도 경고, 중증 장애, 심각한 장애로 설정한다. 
+        트리거 생성 -> 이름(ex: CPU 사용률 95% 이상) -> 조건식 : min(/make_by_Linux by Zabbix agent/system.cpu.util,5m)>95 -> 의존 관계(기존 CPU 90%이상 추가)
+
+      # Memory 90, 95% 를 경고, 심각한 장애로 설정
+        트리거 생성 -> 이름(ex: Memory 사용률 95% 이상) -> 조건식 : min(/make_by_Linux by Zabbix agent/vm.memory.util,5m)>95 -> 의존 관계(기존 Memory 90%이상 추가)
+
+      # Disk 90, 95, 100% 경고, 가벼운장애, 심각한 장애로 설정
+        트리거 프로토타입 -> 조건식 : min(/make_by_Linux by Zabbix agent/vfs.fs.dependent.size[{#FSNAME},pused],5m)>90 
+      # zabbix agent 연결 유무
+      # 서버 재부팅 유무
+      # apache, tomcat, mysql 프로세스 감시 아이템 및 트리거 생성      
+      # URL로 웹 접속해서 URL 접속 확인
+     
+  #### 대시보드
+      
+      <img width="1882" height="937" alt="image" src="https://github.com/user-attachments/assets/ae20ac27-7646-49fa-820c-cbef3b701e1f" />
+
+        
+        
+
 ## 트러블 슈팅
  
     #### 1. 한글설정
@@ -110,7 +141,7 @@
          sudo locale-gen ko_KR.UTF-8
          locale -a 
     
-    #### 2.          
+    #### 2. agent 서버와 Master 서버 연동 실패         
           
 
 

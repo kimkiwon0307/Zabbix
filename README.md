@@ -141,6 +141,23 @@
     
     #### 2. agent 서버와 Master 서버 연동 실패         
           
+  ## 🔔 3. Discord 알림(Alert) 연동
+장애 발생 시 대시보드를 보지 않고도 실시간으로 알림을 받을 수 있도록 Discord 웹훅(Webhook)을 연동했습니다.
 
+#### 1) Discord 채널 웹훅 생성
+1. 알림을 받을 디스코드 채널 설정 -> `연동` -> `웹후크 만들기` 클릭
+2. 생성된 웹후크 URL 복사
+
+#### 2) Zabbix Web 콘솔 설정
+1. **미디어 유형 설정:** `경고(Alerts)` -> `미디어 유형(Media types)` -> 기본 제공된 **Discord** 선택
+2. **파라미터 변경:** `URL` 항목에 방금 복사한 Discord 웹훅 URL을 붙여넣고 업데이트
+3. **사용자에게 미디어 추가:** `관리(Users)` -> `사용자(Users)` -> 본인 계정 선택 -> `미디어(Media)` 탭에서 유형을 **Discord**로 지정 후 추가
+4. **트리거 액션 활성화:** `경고(Alerts)` -> `작업(Actions)` -> `트리거 작업(Trigger actions)`에서 알림 규칙이 활성화되어 있는지 확인
+
+#### 3) 결과 예시
+> 🚨 **[Problem] CPU 사용률 95% 이상**
+> * **Host:** shopmall
+> * **Severity:** High
+> * **Operational data:** 96.2 %
 
        

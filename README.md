@@ -37,7 +37,7 @@
        
   #### 3. 초기 데이터베이스 설정
          
-           mysql -uroot -p password
+           sudo mysql -uroot -p password
 
            #Zabbix 데이터베이스 생성
            CREATE DATABASE zabbix CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;

@@ -42,7 +42,7 @@
            -- Zabbix 데이터베이스 생성
               CREATE DATABASE zabbix CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
-           -- Zabbix 유저 생성 및 권한 부여 ('password' 부분을 원하는 비밀번호로 변경하세요)
+           -- Zabbix 유저 생성 및 권한 부여 ('password' 부분을 원하는 비밀번호로 변경)
               CREATE USER 'zabbix'@'localhost' IDENTIFIED BY 'password';
               GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'localhost';
 
@@ -52,7 +52,7 @@
        ```
   4. 초기 스키마와 데이터를 임포트합니다.
       ```bash
-          # 초기 데이터 임포트 (비밀번호를 요구하면 위에서 설정한 'password' 입력)
+          # 초기 데이터 임포트 (위에서 설정한 'password' 입력)
           zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
 
           # 임포트 완료 후 신뢰 설정 다시 끄기 (보안 권장사항)

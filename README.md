@@ -69,7 +69,9 @@
             systemctl restart zabbix-server zabbix-agent apache2
             systemctl enable zabbix-server zabbix-agent apache2
 
-## zabbix agent 서버 설치 및 구성
+---
+
+## 🛠️ zabbix agent 서버 설치 및 구성
 
   #### 1. 루트 사용자 권한 획득
 

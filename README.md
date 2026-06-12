@@ -6,22 +6,23 @@
   Zabbix란? 서버의 생존 여부, CPU 사용량, 디스크 용량, 서비스 상태 등을 24시간 감시하고 장애를 알리는 오픈소스 모니터링 시스템입니다.
 ---
 
-🔍 주요 모니터링 대상 및 명령어
+## 🔍 주요 모니터링 대상 및 명령어
   1. CPU: top (프로세스 및 리소스 사용량)
   2. Memory: free -h (실제 메모리 사용량 확인)
   3. Disk: df -h (디스크 남은 용량 확인)
   4. Network: eth0 등의 인터페이스 트래픽
   5. Process: 주요 서비스 및 프로세스 실행 여부
 
-🛠️ Zabbix 설치 및 구성 (Ubuntu 24.04 / Zabbix 7.0 LTS)
+## 🛠️ Zabbix 설치 및 구성 (Ubuntu 24.04 / Zabbix 7.0 LTS)
+  
   #### 1. 패키지 업데이트 및 MariaDB 설치
-       ```bash
+       
          # 시스템 패키지 업데이트
          sudo apt update && sudo apt upgrade -y
 
          # MariaDB 데이터베이스 설치
          sudo apt install mariadb-server -y
-       ```
+       
   #### 2. Zabbix 공식 저장소 등록 및 설치
          ```bash
             # Zabbix 7.0 리포지토리 다운로드 및 설치

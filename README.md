@@ -124,9 +124,7 @@
       # URL로 웹 접속해서 URL 접속 확인
      
   #### 대시보드
-      
-      <img width="1882" height="937" alt="image" src="https://github.com/user-attachments/assets/ae20ac27-7646-49fa-820c-cbef3b701e1f" />
-
+      ![대시보드 이미지](https://github.com/user-attachments/assets/ae20ac27-7646-49fa-820c-cbef3b701e1f)
         
         
 

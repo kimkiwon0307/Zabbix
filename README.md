@@ -123,9 +123,9 @@
       # apache, tomcat, mysql 프로세스 감시 아이템 및 트리거 생성      
       # URL로 웹 접속해서 URL 접속 확인
      
-  #### 대시보드
-      ![대시보드 이미지](https://github.com/user-attachments/assets/ae20ac27-7646-49fa-820c-cbef3b701e1f)
-        
+  ### 대시보드
+
+![대시보드 이미지](https://github.com/user-attachments/assets/ae20ac27-7646-49fa-820c-cbef3b701e1f)
         
 
 ## 트러블 슈팅

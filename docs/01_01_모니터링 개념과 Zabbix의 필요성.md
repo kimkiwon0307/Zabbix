@@ -239,3 +239,4 @@ Active 방식은 Agent가 Server로부터 수집할 항목 목록을 받아 데�
 ---
 
 **학습 진도:** 1장 1교시 — 모니터링 개념과 Zabbix 필요성
+<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/d75fbf18-0418-49a7-ab29-07928400b56b" />
